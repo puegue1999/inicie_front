@@ -1,0 +1,86 @@
+<ng-container *ngIf="mostrar">
+    <div class="modal" (click)="toggle()">
+        <div class="modal-card">
+            <div class="nome">
+                <label>{{ converterPrimeiraLetraParaMaiuscula(pokemonModal.name) }}</label>
+            </div>
+            <div class="sub-title">
+                <div>
+                    <label>Cod: #{{ pokemonModal.id }}</label>
+                </div>
+                <div class="tipo">
+                    <label>Tipo: </label>
+                    <label class="bloco {{ pokemonModal.types[0].type.name }}">{{ pokemonModal.types[0].type.name }}</label>
+                    <label class="bloco {{ pokemonModal.types[1].type.name }}" *ngIf="pokemonModal.types.length == 2">{{ pokemonModal.types[1].type.name }}</label>
+                </div>
+            </div>
+            <div class="imagem-principal">
+                <img src="{{ pokemonModal.sprites.other['official-artwork'].front_default }}" alt="imagemPoke">
+            </div>
+            <div class="lista-imagens">
+                <div class="imagem">
+                    <img src="{{ pokemonModal.sprites.other['dream_world'].front_default }}" alt="imagemPoke">
+                </div>
+                <div class="imagem">
+                    <img src="{{ pokemonModal.sprites.other['home'].front_default }}" alt="imagemPoke">
+                </div>
+                <div class="imagem">
+                    <img src="{{ pokemonModal.sprites.other['showdown'].front_default }}" alt="imagemPoke">
+                </div>
+                <div class="imagem">
+                    <img src="{{ pokemonModal.sprites.front_default }}" alt="imagemPoke">
+                </div>
+            </div>
+            <div class="status">
+                <div class="titulo">
+                    <label>Status</label>
+                </div>
+                <div class="porcentagem">
+                    <label>80%</label>
+                </div>
+                <div class="porcentagem">
+                    <label>50%</label>
+                </div>
+                <div class="porcentagem">
+                    <label>20%</label>
+                </div>
+                <div class="legenda">
+                    <label>Vida</label>
+                    <label>Defesa</label>
+                    <label>Velocidade</label>
+                    <label>Ataque</label>
+                </div>
+                <div class="barra vida" [style.height]="vida + '%'">
+                </div>
+                <div class="barra defesa" [style.height]="defesa + '%'">
+                </div>
+                <div class="barra velocidade" [style.height]="velocidade + '%'">
+                </div>
+                <div class="barra ataque" [style.height]="ataque + '%'">
+                </div>
+            </div>
+            <div class="informacoes">
+                <div class="titulo">
+                    <label>Informações</label>
+                </div>
+                <div class="dados">
+                    <label>Altura:</label>
+                    <label>{{ pokemonModal.height }}cm</label>
+                </div>
+                <div class="dados">
+                    <label>Peso:</label>
+                    <label>{{ pokemonModal.weight }}kg</label>
+                </div>
+            </div>
+            <div class="descricao">
+                <div class="titulo">
+                    <label>Descrição</label>
+                </div>
+                <div class="texto">
+                    <label>"{{ descricao }}"</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div (click)="toggle()" class="overlay"></div>
+</ng-container>

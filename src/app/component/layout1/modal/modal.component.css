@@ -1,0 +1,350 @@
+.modal {
+    background: #FFFFFF;
+    border-radius: 8px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    max-height: 100vh;
+    width: 40vw;
+    z-index: 11;
+    box-shadow: 0px 4px 4px 0px #00000026;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+.modal-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 85%;
+    width: 80%;
+    margin: 5rem 0;
+    color: #233674;
+
+    .nome {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        font-weight: 700;
+        font-size: 2rem;
+
+    }
+
+    .sub-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 400;
+        width: 100%;
+
+        .tipo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+
+            .bloco {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 2rem;
+                width: 6rem;
+                margin: 0 0.5rem;
+                color: #FFFFFF;
+            }
+        }
+    }
+
+    .imagem-principal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 200px;
+        border: 1px solid #EFF4FA;
+        width: 27rem;
+        height: 27rem;
+        margin: 1.5rem 0;
+
+        img {
+            height: 90%;
+        }
+    }
+
+    .lista-imagens {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin: 1rem 0;
+
+        .imagem {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 60px;
+            background-color: #EFF4FA;
+
+            img {
+                height: 85%;
+            }
+        }
+
+    }
+
+    .status {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .porcentagem {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            height: 2rem;
+            color: #C4C4C4;
+            font-weight: 600;
+            font-size: 1rem;
+            border-bottom: 1px dashed #C4C4C4;
+            margin: 2rem 0;
+            padding: 0.5rem;
+        }
+
+        .legenda {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: row;
+            width: 100%;
+            height: 2rem;
+            color: #C4C4C4;
+            font-weight: 600;
+            font-size: 1rem;
+            border-bottom: 1px dashed #C4C4C4;
+            margin: 2rem 0;
+        }
+
+        .barra {
+            position: absolute;
+            width: 6%;
+        }
+
+        .vida {
+            left: 8%;
+            bottom: 15%;
+            background-color: #C4F789;
+        }
+
+        .defesa {
+            left: 30%;
+            bottom: 15%;
+            background-color: #F7802A;
+        }
+
+        .velocidade {
+            left: 58%;
+            bottom: 15%;
+            background-color: #49D0B0;
+        }
+
+        .ataque {
+            left: 85%;
+            bottom: 15%;
+            background-color: #EA686D;
+        }
+    }
+
+    .informacoes {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        margin: 1rem 0;
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .dados {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+    }
+
+    .descricao {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+        margin: 1rem 0;
+
+        .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+
+        .texto {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            margin: 0.5rem 0;
+        }
+    }
+}
+
+.grass {
+    background-color: #68B34B;
+}
+
+.fire {
+    background-color: #E37120;
+}
+
+.water {
+    background-color: #2E6285;
+}
+
+.bug {
+    background-color: #3CAB4B;
+}
+
+.flying {
+    background-color: #3DC7EF;
+}
+
+.normal {
+    background-color: #B1C7C7;
+}
+
+.poison {
+    background-color: #E082D7;
+}
+
+.electric {
+    background-color: #D6AD24;
+}
+
+.ground {
+    background-color: #F7DE3F;
+}
+
+.fighting {
+    background-color: #D56723;
+}
+
+.psychic {
+    background-color: #F366B9;
+}
+
+.rock {
+    background-color: #A38C21;
+}
+
+.ice {
+    background-color: #51C4E7;
+}
+
+.ghost {
+    background-color: #7B62A3;
+}
+
+.steel {
+    background-color: #9EB7B8;
+}
+
+.dragon {
+    background-color: #53A4CF;
+}
+
+.fairy {
+    background-color: #FDB9E9;
+}
+
+.dark {
+    background-color: #624D4E;
+}
+
+@media screen and (max-width: 769px) {
+
+    .modal {
+        width: 100vw;
+    }
+
+    .overlay {
+        height: 0vh;
+        left: 0;
+        top: 0;
+        position: fixed;
+        width: 0vw;
+        z-index: 10;
+    }
+
+    .modal-card {
+        .status {
+            .porcentagem {
+                font-size: 0.8rem;
+            }
+        }
+
+        .lista-imagens {
+            .imagem {
+                width: 4rem;
+                height: 4rem;
+
+                img {
+                    height: 70%;
+                }
+            }
+
+        }
+    }
+
+}
