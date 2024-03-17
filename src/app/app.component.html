@@ -1,1 +1,5 @@
-<app-banner></app-banner>
+<app-banner [api]="api" [listaBusca]="listaBusca" (modal)="modal.motrarPokemon($event)" (error)="error.toggle()"></app-banner>
+<app-procurados [api]="api" [listaBusca]="listaBusca" (modal)="modal.motrarPokemon($event)"></app-procurados>
+<app-lista [api]="api" (modal)="modal.motrarPokemon($event)"></app-lista>
+<app-modal #modal [api]="api"></app-modal>
+<app-error #error></app-error>
