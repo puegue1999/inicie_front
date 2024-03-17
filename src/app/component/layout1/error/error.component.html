@@ -1,0 +1,9 @@
+<ng-container *ngIf="mostrar">
+    <div class="modal">
+        <div class="modal-card">
+            <fa-icon [icon]="faCircleXmark"></fa-icon>
+            <label>Busca não encontrada</label>
+        </div>
+    </div>
+    <div (click)="toggle()" class="overlay"></div>
+</ng-container>
