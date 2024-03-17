@@ -1,27 +1,57 @@
-# InicieFront
+# inicie_front
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
+Este é um projeto Angular chamado inicie_front com suporte a Docker.
 
-## Development server
+## Pré-requisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Certifique-se de ter os seguintes softwares instalados em sua máquina local antes de prosseguir:
 
-## Code scaffolding
+- Docker: [Instalação do Docker](https://docs.docker.com/get-docker/)
+- Docker Compose: [Instalação do Docker Compose](https://docs.docker.com/compose/install/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Executando o Projeto com Docker
 
-## Build
+1. Clone o repositório:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+    ```bash
+    git clone https://github.com/seu-usuario/inicie_front.git
+    ```
 
-## Running unit tests
+2. Navegue até o diretório do projeto:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ```bash
+    cd inicie_front
+    ```
 
-## Running end-to-end tests
+3. Construa a imagem Docker:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```bash
+    docker build -t inicie_front .
+    ```
 
-## Further help
+4. Execute o contêiner Docker:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    ```bash
+    docker run -d -p 4200:80 inicie_front
+    ```
+
+5. Acesse o aplicativo em seu navegador:
+
+    ```bash
+    Abra seu navegador e visite http://localhost:4200
+    ```
+
+6. Para parar o contêiner Docker, execute:
+
+    ```bash
+    docker stop $(docker ps -a -q --filter ancestor=inicie_front --format="{{.ID}}")
+    ```
+
+## Caso queira rodar o projeto diretamente:
+
+Para construir o projeto execute os comando abaixo:
+
+    ```bash
+    npm install
+    npm run serve
+    ```
