@@ -1,0 +1,184 @@
+.div-titulo-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 1rem 6rem;
+    color: #2F3E77;
+
+    label {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    button {
+        height: 2rem;
+        width: 2rem;
+        margin: 0 1rem;
+        background-color: #EA686D;
+        box-shadow: 0px 15px 15px 0px #dcc8c81a;
+        border: 0px;
+        border-radius: 20px;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.5s;
+    }
+
+    button:active {
+        background-color: #fff;
+        border: none;
+        color: #EA686D;
+        transition: none;
+    }
+
+    button[disabled] {
+        background-color: #f2f2f2;
+        color: #999999;
+        cursor: auto;
+        box-shadow: none;
+        border-radius: 5px;
+        opacity: 0.6;
+    }
+}
+
+.div-lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 44rem;
+}
+
+.card-branco {
+    width: 12vw;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1vh 2vw;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 15px 15px 0px #2F3E771A;
+    color: #233674;
+    cursor: pointer;
+
+    .titulo-card {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nome {
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+
+        .id {
+            font-weight: 400;
+            font-size: 1rem;
+        }
+    }
+
+    .imagem-card {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 8rem;
+        }
+    }
+
+    .descricao-card {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nome-dados {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .dados {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+.pokemon {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+    border-radius: 50%;
+    border: 8px solid black;
+    animation: spin 1s linear infinite;
+}
+
+.pokemon::before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100px;
+    background: black;
+    top: 50px;
+    transform: translatey(-50%);
+}
+
+.pokemon::after {
+    content: '';
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background: white;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+
+}
+
+/* Spin Animation */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 769px) {
+
+    .card-branco {
+        width: 40vw;
+        height: 30vh;
+
+        .imagem-card {
+            img {
+                height: 12rem;
+            }
+        }
+
+    }
+
+    .div-titulo-lista {
+        justify-content: center;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+}
