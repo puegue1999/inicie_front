@@ -1,0 +1,34 @@
+<div class="div-procurados">
+    <div class="div-titulo-procurados">
+        <label>Mais Procurados</label>
+    </div>
+    <div class="div-lista" *ngIf="!loading">
+        <div class="card-branco" *ngFor="let pokemon of listaPokemon.slice(inicio, fim); let key = index" (click)="abrirModal(pokemon)">
+            <div class="titulo-card">
+                <label class="nome">{{ converterPrimeiraLetraParaMaiuscula(pokemon.name) }}</label>
+                <label class="id">#{{ pokemon.id }}</label>
+            </div>
+            <div class="imagem-card">
+                <img src="{{ pokemon.sprites.other['official-artwork'].front_default }}" alt="imagemPoke">
+            </div>
+            <div class="descricao-card">
+                <label class="nome-dados">Altura:</label>
+                <label class="dados">{{ pokemon.height }} cm</label>
+            </div>
+            <div class="descricao-card">
+                <label class="nome-dados">Peso:</label>
+                <label class="dados">{{ pokemon.weight }} kg</label>
+            </div>
+        </div>
+        <button class="voltar" (click)="voltarPagina()">
+            <fa-icon [icon]="faChevronLeft"></fa-icon>
+        </button>
+        <button class="proximo" (click)="avancarPaginacao()">
+            <fa-icon [icon]="faChevronRight"></fa-icon>
+        </button>
+    </div>
+    <div class="div-lista" *ngIf="loading">
+        <div class="pokemon">
+        </div>
+    </div>
+</div>
