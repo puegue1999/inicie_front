@@ -53,5 +53,5 @@ Para construir o projeto execute os comando abaixo:
 
     ```bash
     npm install
-    npm run serve
+    ng serve
     ```
